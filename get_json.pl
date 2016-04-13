@@ -6,8 +6,8 @@ use JSON;
 my $host = `hostname -f`;
 chomp $host;
 my $json;
-my $buckets_dir = "/var/lib/ops-cosmos-couchbase/data/";
-my $buckets_file = "/var/lib/ops-cosmos-couchbase/data/buckets";
+my $buckets_dir = "/var/lib/ops-collectd-couchbase/data/";
+my $buckets_file = "/var/lib/ops-collectd-couchbase/data/buckets";
 open INPUT, "<", "$buckets_file";
 while ( <INPUT> ) {
 	chomp $_;

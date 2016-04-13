@@ -5,9 +5,9 @@ use JSON;
 
 my $hostname = `hostname -f`;
 chomp $hostname;
-my $out = `curl -s http://$hostname:8091/pools/default/buckets > /var/lib/ops-cosmos-couchbase/data/buckets.json`;
-my $json_file = "/var/lib/ops-cosmos-couchbase/data/buckets.json";
-my $bucket_file = "/var/lib/ops-cosmos-couchbase/data/buckets";
+my $out = `curl -s http://$hostname:8091/pools/default/buckets > /var/lib/ops-collectd-couchbase/data/buckets.json`;
+my $json_file = "/var/lib/ops-collectd-couchbase/data/buckets.json";
+my $bucket_file = "/var/lib/ops-collectd-couchbase/data/buckets";
 my $json;
 {
   local $/;

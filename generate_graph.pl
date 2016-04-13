@@ -9,7 +9,7 @@ my $host = `hostname -f`;
 chomp $host;
 my $json;
 my @buckets;
-my $buckets_file = "/var/lib/ops-cosmos-couchbase/data/buckets";
+my $buckets_file = "/var/lib/ops-collectd-couchbase/data/buckets";
 my @keys = qw ( hit_ratio ep_cache_miss_rate bytes_read bytes_written cmd_get cmd_set curr_connections curr_items decr_hits decr_misses delete_hits delete_misses get_hits get_misses evictions incr_hits incr_misses mem_used misses ops );
 open INPUT, "<$buckets_file";
 while ( <INPUT> ) {
@@ -17,7 +17,7 @@ while ( <INPUT> ) {
 	push ( @buckets, $_ );  
 }
 foreach my $bucket (@buckets) {
-	my $json_file = "/var/lib/ops-cosmos-couchbase/data/$bucket.json";
+	my $json_file = "/var/lib/ops-collectd-couchbase/data/$bucket.json";
 	{	
 		local $/;
   		open my $fh, "<", "$json_file";
